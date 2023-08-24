@@ -76,7 +76,8 @@ static const char *rofidruncmd[] = {"rofi", "-show", "drun", NULL};
 static const char *flameshot[] = {"flameshot", "gui", NULL};
 // scratchpad
 static const char scratchpadname[] = "scratchpad";
-static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
+static const char *scratchpadcmd[] = {"st", "-t",     scratchpadname,
+                                      "-g", "120x34", NULL};
 
 static const Key keys[] = {
     /* modifier                     key        function        argument */
@@ -84,7 +85,7 @@ static const Key keys[] = {
     {MODKEY, XK_Return, spawn, {.v = termcmd}},
     {MODKEY, XK_r, spawn, {.v = rofidruncmd}},
     {MODKEY | ShiftMask, XK_a, spawn, {.v = flameshot}},
-    { MODKEY,XK_s,  togglescratch,  {.v = scratchpadcmd } },
+    {MODKEY, XK_s, togglescratch, {.v = scratchpadcmd}},
     {MODKEY, XK_b, togglebar, {0}},
     {MODKEY, XK_j, focusstack, {.i = +1}},
     {MODKEY, XK_k, focusstack, {.i = -1}},
