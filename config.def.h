@@ -7,8 +7,8 @@ static const int showbar = 1;           /* 0 means no bar */
 static const int topbar = 1;            /* 0 means bottom bar */
 static const char *fonts[] = {"Source Code Pro:size=15"};
 static const char dmenufont[] = "Source Code Pro:size=15";
-static unsigned int baralpha        = 0xd0;
-static unsigned int borderalpha     = OPAQUE;
+static unsigned int baralpha = 0xd0;
+static unsigned int borderalpha = OPAQUE;
 static const char col_gray1[] = "#222222";
 static const char col_gray2[] = "#444444";
 static const char col_gray3[] = "#bbbbbb";
@@ -22,7 +22,8 @@ static const char *colors[][3] = {
 
 /* tagging */
 /* tagging */
-static const char *tags[] = {"", "", "", "", "󰣇", "", "", "󰭻", "󰕧"};
+static const char *tags[] = {"", "", "",  "", "󰣇",
+                             "", "", "󰭻", "󰕧"};
 
 static const Rule rules[] = {
     /* xprop(1):
@@ -72,12 +73,14 @@ static const char *dmenucmd[] = {
 static const char *termcmd[] = {"kitty", NULL};
 // rofi
 static const char *rofidruncmd[] = {"rofi", "-show", "drun", NULL};
+static const char *flameshot[] = {"flameshot", "gui", NULL};
 
 static const Key keys[] = {
     /* modifier                     key        function        argument */
     {MODKEY, XK_p, spawn, {.v = dmenucmd}},
     {MODKEY, XK_Return, spawn, {.v = termcmd}},
     {MODKEY, XK_r, spawn, {.v = rofidruncmd}},
+    {MODKEY, XK_s, spawn, {.v = flameshot}},
     {MODKEY, XK_b, togglebar, {0}},
     {MODKEY, XK_j, focusstack, {.i = +1}},
     {MODKEY, XK_k, focusstack, {.i = -1}},
